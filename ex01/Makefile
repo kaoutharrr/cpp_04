@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/08 13:57:27 by kkouaz            #+#    #+#              #
-#    Updated: 2023/11/08 17:31:15 by kkouaz           ###   ########.fr        #
+#    Created: 2023/11/08 17:20:32 by kkouaz            #+#    #+#              #
+#    Updated: 2023/11/08 17:20:54 by kkouaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = ex01
 CXX = c++
 CPPFLAG = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
