@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:24:47 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 19:24:37 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 23:11:12 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,6 @@ MateriaSource& MateriaSource :: operator=(MateriaSource &other)
     std ::  cout << "Copy assignemet operator for MateriaSource has been called \n";
     if(this == &other)
         return(*this);
-    // if(_m)
-    //     delete[] _m;
-    // if(_m)
-    //     delete _m;
     for (int a = 0; a< 4; a++)
     {
         delete _m[a];
@@ -85,5 +81,11 @@ AMateria* MateriaSource :: createMateria(std::string const & type)
 
 MateriaSource  :: ~MateriaSource()
 {
+
+    for(int i = 0 ; i < 4 ; i++)
+    {
+        if(_m[i])
+            delete _m[i];
+    }
     std :: cout <<" Destructor of MateriaSource has been called \n";
 }

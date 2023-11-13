@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:21:29 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 19:28:00 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 20:49:41 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ ICharacter* me = new Character("me");
     AMateria* tmp;
     tmp = src->createMateria("ice");
     me->equip(tmp);
+    me->unequip(1);
+   // me->unequip();
     tmp = src->createMateria("cure");
     me->equip(tmp);
 ICharacter* bob = new Character("bob");

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:31:47 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 17:36:48 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 23:10:17 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ AMateria* Cure:: clone() const
 
 void  Cure:: use(ICharacter& Character)
 {
-  std :: cout << "Cure: * heals " << Character.getName()<< "’s wounds *\n";
+  std :: cout << "Cure: * heals " << Character.getName()<< "'s wounds *\n";
 }
 
 Cure  :: ~Cure()
