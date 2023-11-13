@@ -6,11 +6,12 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:18:29 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/11 18:36:57 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 19:20:51 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"AMateria.hpp"
+
 
 AMateria :: AMateria(void)
 {
@@ -36,11 +37,16 @@ AMateria& AMateria :: operator=(AMateria& other)
     if(this == &other)
         return(*this);
     MateriaType = other.MateriaType;
+    return(*this);
 }
 
 std::string const& AMateria:: getType() const
 {
     return(MateriaType);
+}
+void AMateria :: use(ICharacter& target)
+{
+    (void)target;
 }
 
 AMateria :: ~AMateria(void)

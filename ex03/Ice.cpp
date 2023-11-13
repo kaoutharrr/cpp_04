@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:15:48 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 01:46:24 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 19:16:29 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ AMateria* Ice:: clone() const
 
 void  Ice :: use(ICharacter& Character)
 {
-    std :: cout << "Ice: * shoots an ice bolt at"  << Character.getName() <<  "*\n";
+    std :: cout << "Ice: * shoots an ice bolt at  "  << Character.getName() <<  "*\n";
 }
 
 Ice  :: ~Ice()

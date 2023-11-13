@@ -6,11 +6,12 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 20:05:52 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 02:12:50 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 19:26:02 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Character.hpp"
+#include"ICharacter.hpp"
 #include"Ice.hpp"
 #include"Cure.hpp"
 Character :: Character()
@@ -18,6 +19,11 @@ Character :: Character()
     std :: cout << "Default constructor of Character has been called \n";
     _name = "default";
     //i = 0;
+    for(int i = 0 ; i < 4 ; i++)
+    {
+        _m[i] = NULL;
+        backup[i] = NULL;
+    }
    count = 0;
 }
 
@@ -26,6 +32,11 @@ Character :: Character(std :: string name)
     std :: cout << "Parametrized constructor of Character has been called \n";
     _name = name;
    // i = 0;
+      for(int i = 0 ; i < 4 ; i++)
+    {
+        _m[i] = NULL;
+        backup[i] = NULL;
+    }
     count = 0;
 }
 
@@ -39,8 +50,10 @@ Character& Character :: operator=(Character& other)
 {
     if(this == &other)
         return(*this);
-    if(_m)
-        delete _m;
+    for (int a = 0; a< 4; a++)
+    {
+        delete _m[a];
+    }
     for (int a = 0; a< 4; a++)
     {
         if(_m[a]->getType() == "ice")
@@ -62,26 +75,23 @@ std::string const & Character ::  getName() const
 
 void   Character :: equip(AMateria* m)
 {
-    int i = 0;
+   // int i = 0;
     if(count > 4)
         return;
-    while(_m[i] != NULL)
-        i++;
-    if(m->getType() == "ice")
-    {
-        if(backup[i] != NULL)
-            delete backup[i];
-        _m[i] = new Ice();
-        backup[i] = _m[i];
+   for (int i = 0; i < 4 ; i++)
+   {
+        if(_m[i] == NULL)
+        {
+
+                if(backup[i] != NULL)
+                    delete backup[i];
+                _m[i] = m->clone();
+                 std :: cout << "typeeee = "<< _m[i]->getType() << "\n\n\n";
+                backup[i] = _m[i];
+            count++;
+            return;
+        }
     }
-    else if (m->getType() == "cure")
-    {
-        if(backup[i] != NULL)
-            delete backup[i];
-        _m[i] = new Cure();
-         backup[i] = _m[i];
-    }
-    count++;
 }
 
 void   Character :: unequip(int idx)
@@ -97,21 +107,17 @@ void   Character :: unequip(int idx)
 
 void  Character :: use(int idx, ICharacter& target)
 {
-    if(idx >= 0 && idx < 4 && _m[idx])
+    
+    if(idx >= 0 && idx < 4 && _m[idx]!= NULL)
     {
-        if(_m[idx]->getType() == "cure")
-        {
-            Cure  *a = _m[idx];
-           
-            a->use(target);
-        }
-
+         _m[idx]->use(target);
+         
     }
 }
 
 Character :: ~Character()
 {
     std :: cout <<"Destructor for Character class has beeen called \n";
-    delete[]_m;
-    delete[]backup;
+    // delete _m;
+    // delete backup;
 }

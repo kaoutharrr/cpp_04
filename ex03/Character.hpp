@@ -6,13 +6,14 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:56:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 02:03:03 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:43:41 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
+#include<iostream>
 #include"ICharacter.hpp"
 
 class Character : public ICharacter
@@ -21,7 +22,6 @@ class Character : public ICharacter
         std :: string _name;
         AMateria* _m[4];
         AMateria* backup[4];
-        int i;
         int count;
     public:
         Character();

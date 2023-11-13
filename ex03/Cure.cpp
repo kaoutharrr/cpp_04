@@ -6,14 +6,14 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:31:47 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 01:44:08 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 17:36:48 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Cure.hpp"
 #include "ICharacter.hpp"
 
-Cure :: Cure()
+Cure :: Cure() : AMateria()
 {
     std :: cout << "Default constructor of Cure has been called \n";
     MateriaType = "cure";
@@ -45,6 +45,5 @@ void  Cure:: use(ICharacter& Character)
 
 Cure  :: ~Cure()
 {
-
      std :: cout << "Destructor of Cure has been called \n";
 }

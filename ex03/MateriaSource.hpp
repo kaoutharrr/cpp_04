@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:21:09 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 01:04:42 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:59:30 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class MateriaSource : public IMateriaSource
         MateriaSource();
         MateriaSource(MateriaSource& other);
         MateriaSource& operator=(MateriaSource& other);
-        void learnMateria(AMateria*);
+        void learnMateria(AMateria* m);
         AMateria* createMateria(std::string const & type);
         ~MateriaSource();
 };
