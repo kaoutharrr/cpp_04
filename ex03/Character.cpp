@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 20:05:52 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 19:26:02 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 19:37:01 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,6 @@ void  Character :: use(int idx, ICharacter& target)
 Character :: ~Character()
 {
     std :: cout <<"Destructor for Character class has beeen called \n";
-    // delete _m;
+    //delete _m;
     // delete backup;
 }

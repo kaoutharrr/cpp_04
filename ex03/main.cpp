@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:21:29 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 18:47:55 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 19:28:00 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ me->use(1, *bob);
 delete bob; 
 delete me;
  delete src;
+ while(1);
 return 0;
  }

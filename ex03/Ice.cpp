@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:15:48 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 19:16:29 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 19:36:43 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void  Ice :: use(ICharacter& Character)
 
 Ice  :: ~Ice()
 {
+    
      std :: cout << "Destructor of Ice has been called \n";
 }
