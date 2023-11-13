@@ -6,11 +6,12 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:15:48 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/11 19:30:38 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 01:46:24 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Ice.hpp"
+#include"Character.hpp"
 
 Ice :: Ice()
 {
@@ -32,14 +33,14 @@ Ice& Ice :: operator=(Ice& other)
     return(*this);
 }
 
-AMateria* AMateria:: clone() const
+AMateria* Ice:: clone() const
 {
     return(new Ice());
 }
 
-void  AMateria :: use(ICharacter& Character)
+void  Ice :: use(ICharacter& Character)
 {
-    std :: cout << "Ice: "* shoots an ice bolt at" " << Character.name <<  "*\n";
+    std :: cout << "Ice: * shoots an ice bolt at"  << Character.getName() <<  "*\n";
 }
 
 Ice  :: ~Ice()

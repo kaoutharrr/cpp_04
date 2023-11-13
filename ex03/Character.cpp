@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 20:05:52 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/11 21:46:35 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 02:12:50 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ Character :: Character()
 {
     std :: cout << "Default constructor of Character has been called \n";
     _name = "default";
-    i = 0;
-   // count = 0;
+    //i = 0;
+   count = 0;
 }
 
 Character :: Character(std :: string name)
 {
     std :: cout << "Parametrized constructor of Character has been called \n";
     _name = name;
-    i = 0;
-   // count = 0;
+   // i = 0;
+    count = 0;
 }
 
 Character :: Character(Character& other)
@@ -62,18 +62,56 @@ std::string const & Character ::  getName() const
 
 void   Character :: equip(AMateria* m)
 {
-    if(i >= 4 || i < 0)
+    int i = 0;
+    if(count > 4)
         return;
-    if(_m[i]->getType() == "ice")
+    while(_m[i] != NULL)
+        i++;
+    if(m->getType() == "ice")
+    {
+        if(backup[i] != NULL)
+            delete backup[i];
         _m[i] = new Ice();
-    else if (_m[i]->getType() == "cure")
+        backup[i] = _m[i];
+    }
+    else if (m->getType() == "cure")
+    {
+        if(backup[i] != NULL)
+            delete backup[i];
         _m[i] = new Cure();
-    i++;
+         backup[i] = _m[i];
+    }
+    count++;
 }
 
 void   Character :: unequip(int idx)
 {
-    if(idx >= i || idx < i)
+    if(idx >= count  || idx < 0)
         return;
-    
+    if(_m[idx] !=  NULL)
+    {
+        _m[idx] = NULL;
+        count--;
+    }
+}
+
+void  Character :: use(int idx, ICharacter& target)
+{
+    if(idx >= 0 && idx < 4 && _m[idx])
+    {
+        if(_m[idx]->getType() == "cure")
+        {
+            Cure  *a = _m[idx];
+           
+            a->use(target);
+        }
+
+    }
+}
+
+Character :: ~Character()
+{
+    std :: cout <<"Destructor for Character class has beeen called \n";
+    delete[]_m;
+    delete[]backup;
 }

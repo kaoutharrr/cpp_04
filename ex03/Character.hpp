@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:56:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/11 21:45:44 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 02:03:03 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ class Character : public ICharacter
     private:
         std :: string _name;
         AMateria* _m[4];
+        AMateria* backup[4];
         int i;
-      //  int count;
+        int count;
     public:
         Character();
         Character(std :: string name);
@@ -30,7 +31,7 @@ class Character : public ICharacter
         std::string const & getName() const;
         void equip(AMateria* m);
         void unequip(int idx);
-        void use(int idx, Character& target);
+        void use(int idx, ICharacter& target);
         ~Character();
 };
 

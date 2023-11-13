@@ -6,11 +6,12 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:31:47 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/11 19:34:50 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/13 01:44:08 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Cure.hpp"
+#include "ICharacter.hpp"
 
 Cure :: Cure()
 {
@@ -32,17 +33,18 @@ Cure& Cure :: operator=(Cure& other)
     return(*this);
 }
 
-AMateria* AMateria:: clone() const
+AMateria* Cure:: clone() const
 {
     return(new Cure());
 }
 
-void  AMateria :: use(ICharacter& Character)
+void  Cure:: use(ICharacter& Character)
 {
-  std :: cout << "Cure: "* heals "" <<Character.name<< "’s wounds *\n";
+  std :: cout << "Cure: * heals " << Character.getName()<< "’s wounds *\n";
 }
 
 Cure  :: ~Cure()
 {
+
      std :: cout << "Destructor of Cure has been called \n";
 }
