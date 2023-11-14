@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:02:50 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/08 17:14:39 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/14 01:43:49 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,5 @@ Dog :: ~Dog(void)
 
 void Dog :: makeSound() const
 {
-    std :: cout << " 🐶 : woof woof !!\n";
+    std :: cout << "dog  🐶 : woof woof !!\n";
 }
-// std :: string  Animal:: getType()
-// {
-//     return(type);
-// }

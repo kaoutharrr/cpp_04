@@ -6,15 +6,15 @@
 #    By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 17:35:44 by kkouaz            #+#    #+#              #
-#    Updated: 2023/11/13 19:29:14 by kkouaz           ###   ########.fr        #
+#    Updated: 2023/11/14 11:53:18 by kkouaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-#-fsanitize=address -g3
+#-fsanitize=address -g3 
 NAME = Materias
 CXX = c++
-CPPFLAGS = -Wall -Wextra -Werror   -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror  -std=c++98 
 RM = rm -rf 
 SRC = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)

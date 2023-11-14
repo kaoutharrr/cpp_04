@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:46:59 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/11 17:10:55 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/14 07:23:49 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Brain& Brain :: operator=(Brain& other)
 
     for (int i = 0; i < 100; i++)
     {
-        other.ideas[i] = ideas[i];
+         ideas[i]= other.ideas[i];
     }
     return(*this);
 }

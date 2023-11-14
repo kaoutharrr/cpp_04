@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:21:09 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 16:59:30 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/14 11:54:31 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class MateriaSource : public IMateriaSource
 {
     private:
         AMateria* _m[4];
+        AMateria* backup[4];
     public:
         MateriaSource();
         MateriaSource(MateriaSource& other);

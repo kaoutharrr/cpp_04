@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:21:19 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/08 17:19:03 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/14 08:25:58 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,6 @@ Animal :: ~Animal(void)
     std :: cout << "Destructor for the Animal class has been called :) \n";
 }
 
-void Animal :: makeSound() const
-{
-    std :: cout << "Animal is general , and can not have a sound !!\n";
-}
 
 const std :: string  Animal:: getType() const
 {

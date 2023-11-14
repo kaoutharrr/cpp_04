@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:05:43 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/08 17:18:04 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/14 07:14:18 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat :: Cat(void)
     type = "Cat";
 }
 
-Cat :: Cat(Cat& other)
+Cat :: Cat(Cat& other) : Animal(other)
 {
     std :: cout << "Copy constructor for the Cat class has been called :) \n";
     *this = other;
@@ -40,10 +40,5 @@ Cat :: ~Cat(void)
 
 void Cat :: makeSound() const
 {
-    std :: cout << " 😸 : meow meow !!\n";
+    std :: cout << "cat  😸 : meow meow !!\n";
 }
-
-// std :: string  Animal:: getType()
-// {
-//     return(type);
-// }

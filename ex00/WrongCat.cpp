@@ -6,11 +6,9 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:30:46 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/08 17:30:51 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/14 07:15:26 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include"WrongCat.hpp"
 
@@ -20,7 +18,7 @@ WrongCat :: WrongCat(void)
     type = "WrongCat";
 }
 
-WrongCat :: WrongCat(WrongCat& other)
+WrongCat :: WrongCat(WrongCat& other) : WrongAnimal(other)
 {
     std :: cout << "Copy constructor for the WrongCat class has been called :) \n";
     *this = other;
@@ -42,5 +40,5 @@ WrongCat :: ~WrongCat(void)
 
 void WrongCat :: makeSound() const
 {
-    std :: cout << " 😸 : meow meow !!\n";
+    std :: cout << " wrongcat : meow meow !!\n";
 }

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:24:47 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 23:11:12 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/14 12:15:19 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ MateriaSource :: MateriaSource()
     for(int i = 0 ; i < 4 ; i++)
     {
         _m[i] = NULL;
+        backup[i] = NULL;
     }
+  
 }
 
 MateriaSource :: MateriaSource(MateriaSource& other)
@@ -37,18 +39,15 @@ MateriaSource& MateriaSource :: operator=(MateriaSource &other)
         return(*this);
     for (int a = 0; a< 4; a++)
     {
-        delete _m[a];
-    }
-    for (int a = 0; a< 4; a++)
-    {
-        if(_m[a]->getType() == "ice")
-            _m[a] = new Ice();
-        else if (_m[a]->getType() == "cure")
-            _m[a] = new Cure();
+        if (_m[a])
+            delete _m[a];
+        if(backup[a])
+            delete backup[a];
     }
     for(int a = 0; a < 4; a++ )
     {
-        _m[a] = other._m[a];
+        _m[a] = other._m[a]->clone();
+        backup[a] = other.backup[a]->clone();
     }
     return(*this);
 }
@@ -59,21 +58,27 @@ void  MateriaSource :: learnMateria(AMateria* m)
     {
         if(_m[i] == NULL)
         { 
-            std :: cout << "i = " << i << "\n";
             _m[i] = m->clone();
-           return;
+           break;
         }
     }
+    delete m;
 }
 
 AMateria* MateriaSource :: createMateria(std::string const & type)
 {
-       
+    
     for (int i = 0;i < 4; i++)
     {
         if(_m[i] != NULL && _m[i]->getType() == type)
         {
-            return(_m[i]->clone());
+            if(backup[i])
+            {
+                delete backup[i];
+                backup[i] = NULL;
+            }
+            backup[i] = _m[i]->clone();
+            return(backup[i]);
         }
     } 
     return 0;
@@ -82,10 +87,21 @@ AMateria* MateriaSource :: createMateria(std::string const & type)
 MateriaSource  :: ~MateriaSource()
 {
 
+   for(int i = 0 ; i < 4 ; i++)
+    {
+       if(backup[i])
+       {
+         delete backup[i];
+         backup[i] = NULL;
+        }
+    }
     for(int i = 0 ; i < 4 ; i++)
     {
         if(_m[i])
+        {
             delete _m[i];
+            _m[i] = NULL;
+        }    
     }
     std :: cout <<" Destructor of MateriaSource has been called \n";
 }

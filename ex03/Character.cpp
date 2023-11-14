@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 20:05:52 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/13 23:09:20 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/14 12:10:09 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,12 @@ Character :: Character(std :: string name)
 Character :: Character(Character& other)
 {
     std :: cout << "Copy constructor of Character has been called \n";
-    *this = other;
+    // *this = other;
+      for(int a = 0; a < 4; a++ )
+      {
+        _m[a] = other._m[a]->clone();
+        backup[a] = _m[a];
+    }
 }
 
 Character& Character :: operator=(Character& other)
@@ -62,12 +67,17 @@ std::string const & Character ::  getName() const
 
 void   Character :: equip(AMateria* m)
 {
+    if(!m)
+        return;
    for (int i = 0; i < 4 ; i++)
    {
         if(_m[i] == NULL)
         {
             if(backup[i] != NULL)
+            {
                 delete backup[i];
+                backup[i] = NULL;
+            }
             _m[i] = m->clone();
             backup[i] = _m[i];
             count++;
@@ -93,18 +103,26 @@ void  Character :: use(int idx, ICharacter& target)
     if(idx >= 0 && idx < 4 && _m[idx]!= NULL)
     {
          _m[idx]->use(target);
-         
     }
 }
 
 Character :: ~Character()
 {
-    for(int i = 0 ; i < 4 ; i++)
+    for(int i = 0; i < 4 ; i++)
     {
+        if(backup[i])
+        {
+            if (backup[i] != _m[i]) 
+            {
+                delete backup[i];
+                backup[i] = nullptr;
+            }
+        }
         if(_m[i])
+        {
             delete _m[i];
-        else if(backup[i])
-            delete backup[i];
+            _m[i] = NULL;
+        }
     }
     std :: cout <<"Destructor for Character class has beeen called \n";
 }
