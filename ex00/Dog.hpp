@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:04:38 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/08 17:02:43 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/15 03:59:16 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal
         Dog(Dog& other);
         Dog& operator=(Dog& other);
         void makeSound()const;
-        ~Dog();
+        virtual ~Dog();
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:04:48 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/10 16:57:19 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/15 04:00:29 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Cat : public Animal
         Cat(Cat& other);
         Cat& operator=(Cat& other);
         void makeSound()const;
-        ~Cat();
+        virtual ~Cat();
 };
 
 

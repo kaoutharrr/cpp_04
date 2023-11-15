@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:11:46 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/14 08:26:17 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/15 02:52:09 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,12 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-// int main() {
-// const Animal* meta = new Animal();
-// const Animal* j = new Dog();
-// const Animal* i = new Cat();
-// std::cout << j->getType() << " " << std::endl;
-// std::cout << i->getType() << " " << std::endl;
-// i->makeSound(); 
-// j->makeSound();//will output the cat sound! j->makeSound();
-// meta->makeSound();
-// std :: cout << "\n\n now with wrong animal \n\n\n";
-// const WrongAnimal* metaa = new WrongAnimal();
-// const WrongAnimal* a = new WrongCat();
-// std::cout << a->getType() << " " << std::endl;
-// a->makeSound(); 
-// //j->makeSound();//will output the cat sound! j->makeSound();
-// metaa->makeSound();
-// return 0; }
 
-int main1()
+
+int main()
 {
     Animal* arr[10];
-    Dog k;
-    Dog b = k;
-    Dog c;
-    c = k;
+
 
     for (int i = 0; i < 5; i++)
     {
@@ -55,9 +36,11 @@ int main1()
    return(0);
 }
 
-int main()
-{
-    main1();
+// int main() {
 
-   // system("leaks Animal01");
-}
+// const Animal* j = new Dog(); 
+// //const Animal* i = new Cat();
+// delete j;//should not create a leak delete i;
+
+// return 0; 
+// }

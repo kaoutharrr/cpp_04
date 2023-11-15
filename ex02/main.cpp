@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:11:46 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/14 08:30:44 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/15 02:53:47 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@
 // return 0; 
 // }
 
-int main1()
+int main()
 {
+    // Animal a;
     Animal* arr[10];
+
     for (int i = 0; i < 5; i++)
     {
         arr[i] = new Cat();
@@ -54,10 +56,4 @@ int main1()
         delete arr[i];
     }
     return 0;
-}
-
-int main()
-{
-    main1();
-    system("leaks Animal02");
 }

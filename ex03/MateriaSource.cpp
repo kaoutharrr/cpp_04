@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:24:47 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/14 12:15:19 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/15 03:41:58 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,13 @@ MateriaSource :: MateriaSource()
 MateriaSource :: MateriaSource(MateriaSource& other)
 {
     std ::  cout << "Copy constructor for MateriaSource has been called \n";
-    *this = other;
+        for(int a = 0; a < 4; a++ )
+      {
+        _m[a] = other._m[a]->clone();
+        backup[a] = _m[a];
+    }
 }
+
 
 MateriaSource& MateriaSource :: operator=(MateriaSource &other)
 {

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:11:46 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/14 07:37:56 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/15 01:27:39 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,5 @@ int main()
     delete metaa;
     delete a;
 
-    system("leaks Animal");
     return 0; 
 }

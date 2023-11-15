@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 20:05:52 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/14 12:10:09 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/15 03:40:11 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include"ICharacter.hpp"
 #include"Ice.hpp"
 #include"Cure.hpp"
+
 Character :: Character()
 {
     std :: cout << "Default constructor of Character has been called \n";
@@ -41,7 +42,6 @@ Character :: Character(std :: string name)
 Character :: Character(Character& other)
 {
     std :: cout << "Copy constructor of Character has been called \n";
-    // *this = other;
       for(int a = 0; a < 4; a++ )
       {
         _m[a] = other._m[a]->clone();
@@ -54,9 +54,15 @@ Character& Character :: operator=(Character& other)
     if(this == &other)
         return(*this);
     for (int a = 0; a< 4; a++)
-        delete _m[a];
+    {
+        if(_m[a])
+            delete _m[a];
+    }
     for(int a = 0; a < 4; a++ )
+    {
         _m[a] = other._m[a]->clone();
+        backup[a] = _m[a];
+    }
     return(*this);
 }
 
@@ -78,6 +84,7 @@ void   Character :: equip(AMateria* m)
                 delete backup[i];
                 backup[i] = NULL;
             }
+            _m[i] = m;
             _m[i] = m->clone();
             backup[i] = _m[i];
             count++;
@@ -115,7 +122,7 @@ Character :: ~Character()
             if (backup[i] != _m[i]) 
             {
                 delete backup[i];
-                backup[i] = nullptr;
+                backup[i] = NULL;
             }
         }
         if(_m[i])

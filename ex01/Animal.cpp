@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:21:19 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/11/14 07:40:40 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/11/15 02:17:57 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal :: Animal(Animal& other)
 
 Animal& Animal :: operator=(Animal& other)
 {
-     std :: cout << "Copy assignement operator for the Animal class has been called :) \n";
+    std :: cout << "Copy assignement operator for the Animal class has been called :) \n";
     if(this == &other)
         return(*this);
     type = other.type;
